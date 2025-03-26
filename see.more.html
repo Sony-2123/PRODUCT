@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .a {
+      border: 4px solid black;
+      border-radius: 0px;
+      height: 200px;
+      width: 200px;
+      margin-left: 500px;
+    }
+    .b {
+      height: 200px;
+      width: 200px;
+      border: 2px solid red;
+      border-radius: 20px;
+      margin-left: 100px;
+    }
+    .div {
+      display: inline;
+      float: right;
+      margin-left: 1000px;
+      margin-top: -460px;
+    }
+    .div1 {
+      display: inline;
+      float: right;
+      margin-left: 1000px;
+      font-size: 15px;
+      width: 80px;
+      margin-top: -80px;
+      margin-right: 300px;
+    }
+    .div2 {
+      display: inline;
+      float: right;
+      margin-top: -30px;
+      font-size: 15px;
+      width: 80px;
+      margin-right: 300px;
+      background-color: aqua;
+    }
+    .imgg {
+      width: 200px;
+      height: 200px;
+    }
+    .review {
+      width: 90px;
+      margin-left: 30px;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // Create an empty box
+    var b = document.createElement("h2");
+    document.body.appendChild(b);
+    b.setAttribute("class", "a");
+    
+    // Create an image in the box from local storage
+    var imgg = document.createElement("img");
+    b.appendChild(imgg);
+    imgg.setAttribute("src", window.localStorage.getItem("image"));
+    imgg.setAttribute("class", "imgg");
+    
+    // For 1st image
+    var img1 = document.createElement("img");
+    document.body.appendChild(img1);
+    img1.setAttribute("src", "https://m.media-amazon.com/images/I/41p1Rf8kitL._SX300_SY300_QL70_FMwebp_.jpg");
+    img1.setAttribute("class", "b");
+    img1.addEventListener("click", cb);
+    
+    // For 2nd image
+    var img2 = document.createElement("img");
+    document.body.appendChild(img2);
+    img2.setAttribute("src", "https://m.media-amazon.com/images/I/41W99DkNCYL._SX300_SY300_QL70_FMwebp_.jpg");
+    img2.setAttribute("class", "b");
+    img2.addEventListener("click", cb1);
+    
+    // Functions for changing the image in the box
+    function cb() {
+      b.innerHTML = "<img src='https://m.media-amazon.com/images/I/41p1Rf8kitL._SX300_SY300_QL70_FMwebp_.jpg' height='200px' width='200px'>";
+    }
+    
+    function cb1() {
+      b.innerHTML = "<img src='https://m.media-amazon.com/images/I/41W99DkNCYL._SX300_SY300_QL70_FMwebp_.jpg' height='200px' width='200px'>";
+    }
+    
+    // For 3rd image
+    var img4 = document.createElement("img");
+    document.body.appendChild(img4);
+    img4.setAttribute("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTI1t0-12e1KRe8ns2zcCRdXTJEJqwfoASjMQvJ8S7Dw&s");
+    img4.setAttribute("class", "b");
+    img4.addEventListener("click", cb4);
+    
+    function cb4() {
+      b.innerHTML = "<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTI1t0-12e1KRe8ns2zcCRdXTJEJqwfoASjMQvJ8S7Dw&s' height='200px' width='200px'>";
+    }
+    
+    // Create a span and a div for displaying additional details
+    var span = document.createElement("span");
+    document.body.appendChild(span);
+    span.setAttribute("class", "div");
+    
+    var div1 = document.createElement("div");
+    span.appendChild(div1);
+    
+    var h1 = document.createElement("h1");
+    div1.appendChild(h1);
+    h1.innerText = "id:" + window.localStorage.getItem("id");
+    
+    var h5 = document.createElement("h1");
+    div1.appendChild(h5);
+    h5.innerText = "title:" + window.localStorage.getItem("title");
+    
+    var h2 = document.createElement("h1");
+    div1.appendChild(h2);
+    h2.innerText = "category:" + window.localStorage.getItem("category");
+    
+    var h3 = document.createElement("h1");
+    div1.appendChild(h3);
+    h3.innerText = "description:" + window.localStorage.getItem("description");
+    
+    // Create a button for "BUY NOW"
+    var h4 = document.createElement("h1")
+  
+    var but = document.createElement("button")
+    but.setAttribute("class", "but")
+    but.addEventListener("click", function() {
+      // Assumes 'data' and index 'i' are defined elsewhere
+      window.localStorage.setItem("image", data[i].image)
+      window.location.assign("./buy.now.html")
+    })
+    h4.appendChild(but)
+    but.innerText = "BUY NOW"
+    document.body.appendChild(h4)
+    
+  </script>
+</body>
+</html>
